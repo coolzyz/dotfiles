@@ -1,4 +1,3 @@
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "General
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -151,14 +150,23 @@ nnoremap <silent> <F8> :<Esc>:!ctags -R --fields=+lS *<CR>:!cscope -Rb *<CR>
 nnoremap <silent> <F9> :NERDTreeToggle<CR>
 
 "cscope mapping
+"functions calling this function
 nnoremap <C-w>\ :scs find c <C-R>=expand("<cword>")<CR><CR>
+"find this symbol
 nnoremap <C-\>s :scs find s <C-R>=expand("<cword>")<CR><CR>
+"find this definition
 nnoremap <C-\>g :scs find g <C-R>=expand("<cword>")<CR><CR>
+"find functions called by this function
 nnoremap <C-\>d :scs find d <C-R>=expand("<cword>")<CR><CR>
+"functions calling this function
 nnoremap <C-\>c :scs find c <C-R>=expand("<cword>")<CR><CR>
+"find this text string
 nnoremap <C-\>t :scs find t <C-R>=expand("<cword>")<CR><CR>
+"find this egrep pattern
 nnoremap <C-\>e :scs find e <C-R>=expand("<cword>")<CR><CR>
+"find this file
 nnoremap <C-\>f :scs find f <C-R>=expand("<cfile>")<CR><CR>
+"find file #includeing this file
 nnoremap <C-\>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
