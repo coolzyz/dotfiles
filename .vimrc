@@ -1,3 +1,4 @@
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "General
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -109,25 +110,56 @@ set display=lastline
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"taglist setup
-let Tlist_Use_Right_Window = 1
-let Tlist_File_Fold_Auto_Close=1
-let Tlist_WinWidth=32
-nnoremap <silent> <F2> :TlistOpen<CR>
+"set tagbar width
+let tagbar_width = 32
 
-"the-nerd-tree:file explorer toggle
-nnoremap <silent> <F9> :NERDTreeToggle<CR>
-
+"ctags & cscope
+set tags=tags;~
+set tags+=/usr/include/tags
+"use both cscope and ctag
+set cscopetag
+"show msg when cscope db added
+set cscopeverbose
+"use tags for definition search first
+set cscopetagorder=1
 "use context to decide completion type
-"let SuperTabDefaultCompletionType = "context"
+let SuperTabDefaultCompletionType = "context"
+"use quickfix window to show cscope results
+set cscopequickfix=s-,c-,d-,i-,t-,e-
+
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Key Binding
+"Key Binding && Mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "move among vim window
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
-"close vim window
-nnoremap <C-q> <C-w>q
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+"tab navigation
+nnoremap tp :tabprevious<CR>
+nnoremap tn :tabnext<CR>
+nnoremap to :tabnew<CR>
+nnoremap tc :tabclose<CR>
+"open filename under curor in new tab
+nnoremap gf <C-W>gf
+
+"toggle tagbar
+nnoremap <silent> <F2> :TagbarOpen<CR>
+"the-nerd-tree:file explorer toggle
+nnoremap <silent> <F8> :<Esc>:!ctags -R --fields=+lS *<CR>:!cscope -Rb *<CR>
+nnoremap <silent> <F9> :NERDTreeToggle<CR>
+
+"cscope mapping
+nnoremap <C-w>\ :scs find c <C-R>=expand("<cword>")<CR><CR>
+nnoremap <C-\>s :scs find s <C-R>=expand("<cword>")<CR><CR>
+nnoremap <C-\>g :scs find g <C-R>=expand("<cword>")<CR><CR>
+nnoremap <C-\>d :scs find d <C-R>=expand("<cword>")<CR><CR>
+nnoremap <C-\>c :scs find c <C-R>=expand("<cword>")<CR><CR>
+nnoremap <C-\>t :scs find t <C-R>=expand("<cword>")<CR><CR>
+nnoremap <C-\>e :scs find e <C-R>=expand("<cword>")<CR><CR>
+nnoremap <C-\>f :scs find f <C-R>=expand("<cfile>")<CR><CR>
+nnoremap <C-\>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Template
@@ -167,7 +199,10 @@ Bundle 'gmarik/vundle'
 
 
 Bundle 'ctags.vim'
-Bundle 'taglist.vim'
+"autoload cscope.out in parent dir
+Bundle 'autoload_cscope.vim'
+Bundle 'Tagbar'
+Bundle 'echofunc.vim'
 Bundle 'The-NERD-Commenter'
 Bundle 'The-NERD-tree'
 Bundle 'SuperTab-continued.'
