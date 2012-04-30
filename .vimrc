@@ -13,6 +13,8 @@ set number
 set tabstop=8
 set noexpandtab
 set shiftwidth=8
+set expandtab
+set smarttab
 
 "show title as console title bar
 set title
@@ -77,7 +79,9 @@ nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo') <CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Colors
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-colorscheme desert
+"colorscheme desert
+"colorscheme torte
+colorscheme elflord
 "colorscheme murphy
 
 "enable syntax highlight
@@ -113,7 +117,7 @@ set display=lastline
 let tagbar_width = 32
 
 "ctags & cscope
-set tags=tags;~
+set tags=tags
 set tags+=/usr/include/tags
 "use both cscope and ctag
 set cscopetag
@@ -173,6 +177,7 @@ nnoremap <C-\>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
 "Template
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd BufNewFile *.c 0r $HOME/.vim/templates/c.tpl
+autocmd BufNewFile *.cpp 0r $HOME/.vim/templates/cpp.tpl
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Session : restore cursor postion when leave / enter
