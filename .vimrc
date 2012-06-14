@@ -61,6 +61,7 @@ set cindent
 
 "enable filetypes
 filetype plugin indent on
+filetype plugin on
 
 "use soft tabs for python
 autocmd FileType python set et sta ts=4 sw=4
@@ -130,6 +131,19 @@ let SuperTabDefaultCompletionType = "context"
 "use quickfix window to show cscope results
 set cscopequickfix=s-,c-,d-,i-,t-,e-
 
+"vim-javascript(indent) configuration
+let g:html_indent_inctags = "html,body,head,tbody"
+let g:html_indent_script1 = "inc"
+let g:html_indent_style1 = "inc"
+
+"configure tabwidth for web development
+autocmd FileType javascript set tabstop=4 shiftwidth=4
+autocmd FileType html set tabstop=4 shiftwidth=4
+autocmd FileType css set tabstop=4 shiftwidth=4
+"configure javascript lint(warning ,error)
+autocmd FileType javascript set makeprg=jsl\ -nologo\ -nofilelisting\ -nosummary\ -nocontext\ -conf\ '/usr/local/jsl.conf'\ -process\ %
+autocmd FileType javascript set errorformat=%f(%l):%m
+autocmd FileType javascript map <silent> <F10> :make<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Key Binding && Mappings
@@ -219,6 +233,11 @@ Bundle 'echofunc.vim'
 Bundle 'The-NERD-Commenter'
 Bundle 'The-NERD-tree'
 Bundle 'SuperTab-continued.'
+
+" fast develop xml html structed language
+Bundle 'ZenCoding.vim'
+Bundle 'pangloss/vim-javascript'
+Bundle 'javaScriptLint.vim'
 
 "Required to use the indentation setting set by plugins
 filetype plugin indent on
