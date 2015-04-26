@@ -66,6 +66,20 @@ filetype plugin on
 "use soft tabs for python
 autocmd FileType python set et sta ts=4 sw=4
 
+nnoremap tn :tabnext<CR>
+nnoremap to :tabnew<CR>
+nnoremap tc :tabclose<CR>
+"open filename under curor in new tab
+nnoremap gf <C-W>gf
+
+
+if !exists(' :Q')
+    command! Q q
+endif
+
+if !exists(':W')
+    command! W w
+endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Code Fold
