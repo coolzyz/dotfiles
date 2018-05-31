@@ -74,6 +74,8 @@ Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'SirVer/ultisnips'
 Plugin 'coolzyz/vim-colorschemes'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 
 call vundle#end()
@@ -131,6 +133,8 @@ nmap <Leader>q :q<CR>
 nmap <Leader>w :w<CR>
 nmap <Leader>wa :wa<CR>
 
+let g:airline_theme='angr'
+
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -140,14 +144,3 @@ set t_Co=256
 colorscheme termcolor
 "colorscheme desert
 
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Status Line
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"always have a status line
-set laststatus=2
-
-set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [%p%%]\ [LEN=%L]
-
-"allow displaying incomplete line
-set display=lastline
