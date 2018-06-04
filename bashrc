@@ -7,14 +7,17 @@ fi
 
 # User specific aliases and functions
 
+# case insensetive
+bind "set completion-ignore-case on"
 
 
 #aliasssss
 alias c='clear'
 alias h='history'
-alias ll='ls -hl'
-alias la='ls -a'
-alias l='ls -lh'
+alias ls='ls --color=auto'
+alias ll='ls -hl --color=auto'
+alias la='ls -aF'
+alias l='ls -lhF'
 alias cp='cp -v -i'
 alias mv='mv -v -i'
 alias mc='make -f ~/bin/Makefile ctags'
