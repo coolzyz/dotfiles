@@ -13,7 +13,7 @@ set smarttab
 set noexpandtab
 
 "turn off bell
-set t_vb=
+set noeb vb t_vb=
 
 "display incomplete commands in last line
 set showcmd
@@ -69,6 +69,7 @@ call vundle#begin()
 
 Bundle 'gmarik/vundle'
 
+Plugin 'vim-scripts/a.vim'
 Plugin 'c.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdtree.git'
@@ -77,6 +78,7 @@ Plugin 'coolzyz/vim-colorschemes'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
+Plugin 'ternjs/tern_for_vim'
 
 call vundle#end()
 
