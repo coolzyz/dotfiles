@@ -7,8 +7,8 @@ set number
 set nobackup
 
 "use hard tabs
-set tabstop=8
-set shiftwidth=8
+set tabstop=4
+set shiftwidth=4
 set smarttab
 set noexpandtab
 
@@ -41,6 +41,15 @@ set cindent
 "use soft tabs for python
 autocmd FileType python set et sta ts=4 sw=4
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Colors
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+syntax enable
+set background=dark
+set t_Co=256
+colorscheme termcolor
+"colorscheme desert
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Search Match
@@ -52,7 +61,6 @@ set smartcase
 set hlsearch
 "increamental search
 set incsearch
-
 
 
 
@@ -73,18 +81,21 @@ Plugin 'vim-scripts/a.vim'
 Plugin 'c.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdtree.git'
-Plugin 'SirVer/ultisnips'
 Plugin 'coolzyz/vim-colorschemes'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-
 Plugin 'ternjs/tern_for_vim'
+Plugin 'dyng/ctrlsf.vim'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-lua-ftplugin'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 call vundle#end()
 
 "Required to use the indentation setting set by plugins
 filetype plugin indent on
 filetype plugin on
+
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -112,9 +123,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 map <C-n> :NERDTreeToggle<CR>
 
 
-"open filename under curor in new tab
-nnoremap gf <C-W>gf
-
 "move among vim window
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
@@ -135,14 +143,23 @@ nmap <Leader>q :q<CR>
 nmap <Leader>w :w<CR>
 nmap <Leader>wa :wa<CR>
 
+"air line
 let g:airline_theme='angr'
 
+"ctrlsf
+let g:ctrlsf_default_view_mode = 'compact'
+let g:ctrlsf_confirm_save = 0
+let g:ctrlsf_ignore_dir = ["node_modules", "tags"]
+nmap     <Leader>n <Plug>CtrlSFCwordPath
+vmap     <Leader>f <Plug>CtrlSFVwordExec 
 
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Colors
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set t_Co=256
-colorscheme termcolor
-"colorscheme desert
+"ctrlp
+let g:ctrlp_open_new_file = 'v'
+let g:ctrlp_open_multiple_files = 'v'
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
+"a.vim
+nmap <CR> :AV<CR>
 
