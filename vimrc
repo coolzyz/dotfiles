@@ -77,6 +77,7 @@ call vundle#begin()
 
 Bundle 'gmarik/vundle'
 
+"open .h accorrding .c/.cpp
 Plugin 'vim-scripts/a.vim'
 Plugin 'c.vim'
 Plugin 'majutsushi/tagbar'
@@ -86,9 +87,13 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ternjs/tern_for_vim'
 Plugin 'dyng/ctrlsf.vim'
+"for lua
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-lua-ftplugin'
+"quick find file
 Plugin 'ctrlpvim/ctrlp.vim'
+"auto load function prototype 
+Plugin 'vim-scripts/autoproto.vim'
 
 call vundle#end()
 
@@ -109,7 +114,7 @@ nmap <F3> :TagbarToggle<CR>
 
 "ctags & cscope
 set tags=tags
-set tags+=/usr/include/tags
+set tags+=~/.vim/systags
 "use both cscope and ctag
 set cscopetag
 "show msg when cscope db added
