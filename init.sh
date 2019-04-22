@@ -59,3 +59,11 @@ if [ -n "$BASH_VERSION" ] || [ -n "$ZSH_VERSION" ]; then
 	fi
 fi
 
+# 覆盖bashrc vimrc inputrc
+mv ~/.bashrc ~/.basrc_bk
+cp bashrc ~/.bashrc
+cp vimrc ~/.vimrc
+cp inputrc ~/.inputrc
+source ~/.bashrc
+
+
