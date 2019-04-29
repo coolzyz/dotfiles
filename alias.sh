@@ -25,7 +25,9 @@ alias psa="ps aux"
 alias psg="ps aux | grep "
 
 
-#==================   list file/folder size  ================
+#list file/folder size  
 alias big="du -h --max-depth=1 ."
 alias big2='ncdu'
 
+# git
+alias gs='git status'
