@@ -31,3 +31,7 @@ alias big2='ncdu'
 
 # git
 alias gs='git status'
+alias gco='git checkout'
+alias gci='git commit'
+alias gdiff='git diff'
+alias ga='git add'
