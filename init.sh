@@ -66,4 +66,3 @@ cp vimrc ~/.vimrc
 cp inputrc ~/.inputrc
 source ~/.bashrc
 
-

@@ -35,3 +35,9 @@ alias gco='git checkout'
 alias gci='git commit'
 alias gdiff='git diff'
 alias ga='git add'
+alias gl='git log --pretty'
+
+# docker
+alias dc='docker container'
+alias di='docker image'
+
