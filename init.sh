@@ -66,3 +66,5 @@ cp vimrc ~/.vimrc
 cp inputrc ~/.inputrc
 source ~/.bashrc
 
+
+"this is new
