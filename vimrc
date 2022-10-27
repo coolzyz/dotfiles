@@ -47,6 +47,7 @@ autocmd FileType python set et sta ts=4 sw=4
 syntax enable
 set background=dark
 set t_Co=256
+"colorscheme Tomorrow-Night-Bright
 colorscheme termcolor
 "colorscheme desert
 
@@ -94,13 +95,18 @@ Plugin 'ctrlpvim/ctrlp.vim'
 "auto show function prototype 
 Plugin 'mbbill/echofunc'
 Plugin 'Shougo/neocomplete.vim'
+"pep8 format
+Plugin 'tell-k/vim-autopep8'
+
+"markdown
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 
 call vundle#end()
 
 "Required to use the indentation setting set by plugins
 filetype plugin indent on
 filetype plugin on
-
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -150,6 +156,7 @@ nmap <Leader>wa :wa<CR>
 let g:airline_theme='angr'
 
 "ctrlsf
+let g:ctrlsf_case_sensitive = 'yes'
 let g:ctrlsf_default_view_mode = 'compact'
 let g:ctrlsf_confirm_save = 0
 let g:ctrlsf_ignore_dir = ["node_modules", "tags"]
@@ -165,6 +172,9 @@ let g:ctrlp_cmd = 'CtrlP'
 
 "a.vim
 nmap <CR> :AV<CR>
+
+"autopep8.vim
+":Autopep8
 
 
 "neocomplete.vim
