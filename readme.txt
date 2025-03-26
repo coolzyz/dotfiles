@@ -1,0 +1,1 @@
+*  重命名gvimrc to vimrc 放置/C:\Users\username 目录
