@@ -77,15 +77,15 @@ set incsearch
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Vundle
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+"git clone https://github.com/VundleVim/Vundle.vim.git ~/vimfiles/bundle/Vundle.vim
 
 filetype off
-
-set runtimepath+=~/.vim/bundle/vundle/
+set shellslash
+set rtp+=~/vimfiles/bundle/Vundle.vim/
 
 call vundle#begin()
 
-Bundle 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 
 "open .h accorrding .c/.cpp
 Plugin 'vim-scripts/a.vim'
@@ -188,7 +188,7 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
 "a.vim
-nmap <CR> :AV<CR>
+"nmap <CR> :AV<CR>
 
 
 "neocomplete.vim
@@ -228,7 +228,6 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 
 set guifont=Consolas:h14:cANSI
-
 if has("gui_running")
   " GUI is running or is about to start.
   set lines=90 columns=160
